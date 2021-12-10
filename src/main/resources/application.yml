@@ -1,0 +1,18 @@
+spring:
+  main:
+    allow-circular-references: true
+  application.name: ${APPLICATION_NAME:keycloak}
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  port: ${SERVER_PORT:8081}
+keycloak:
+  auth-server-url: http://127.0.0.1:8484/auth
+  realm: keycloak_demo
+  resource: demo_client
+  bearer-only: true
+  use-resource-role-mappings: true
+  credentials:
+    secret: fc359c8c-17a0-417c-b470-4bbd4f0d421d
+  public-client: false
